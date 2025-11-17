@@ -1,0 +1,61 @@
+.home-container {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(120deg, #0a0a0a, #1a1a1a, #000);
+  background-size: 400% 400%;
+  animation: moveBg 20s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes moveBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: #ff4444;
+  text-shadow: 0 0 10px red, 0 0 20px darkred;
+  margin: 50px 0 20px 0;
+}
+
+.cta-section {
+  text-align: center;
+  margin: 50px 20px;
+}
+
+.cta-section h2 {
+  font-size: 36px;
+  color: #ff4444;
+  text-shadow: 0 0 10px red, 0 0 20px darkred;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.cta-section button {
+  background: #8B0000;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(255,0,0,0.5);
+}
+
+.cta-section button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255,0,0,0.7);
+}
+
+html {
+  scroll-behavior: smooth;
+}

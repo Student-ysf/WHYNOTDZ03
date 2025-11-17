@@ -1,24 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import ProductPage from "./pages/ProductPage";
+import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout cartItems={cartItems} setCartItems={setCartItems}>
+              <Home cartItems={cartItems} setCartItems={setCartItems} />
+            </Layout>
+          }
+        />
+        <Route
+          path="/shop"
+          element={
+            <Layout cartItems={cartItems} setCartItems={setCartItems}>
+              <Shop cartItems={cartItems} setCartItems={setCartItems} />
+            </Layout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Layout cartItems={cartItems} setCartItems={setCartItems}>
+              <AboutUs />
+            </Layout>
+          }
+        />
+       <Route
+  path="/contact"
+  element={
+    <Layout cartItems={cartItems} setCartItems={setCartItems}>
+      <Contact />
+    </Layout>
+  }
+/>
+        <Route
+          path="/product/:id"
+          element={
+            <Layout cartItems={cartItems} setCartItems={setCartItems}>
+              <ProductPage cartItems={cartItems} setCartItems={setCartItems} />
+            </Layout>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

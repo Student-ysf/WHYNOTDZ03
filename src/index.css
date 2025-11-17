@@ -1,13 +1,59 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  background: linear-gradient(120deg, #0a0a0a, #1a1a1a, #000000);
+  background-size: 400% 400%;
+  animation: moveBg 12s ease infinite;
+  color: white;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes moveBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.goth-text {
+  text-shadow: 0 0 10px red, 0 0 20px darkred;
+  letter-spacing: 1px;
+}
+
+.product-card, .banner img {
+  box-shadow: 0px 10px 25px rgba(255, 0, 0, 0.18);
+  transition: 0.3s ease;
+  border-radius: 12px;
+}
+
+.product-card:hover, .banner img:hover {
+  box-shadow: 0px 15px 35px rgba(255, 0, 0, 0.4);
+  transform: translateY(-5px);
+}
+
+.bat {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  animation: fly linear infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(-60px) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50vw) translateY(-30px) rotate(15deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(110vw) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
 }

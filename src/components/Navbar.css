@@ -1,0 +1,31 @@
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 15px;
+  position: relative;
+  text-shadow: 0 0 5px white, 0 0 10px #ff0000;
+  transition: color 0.3s;
+  animation: neonBlink 1.5s infinite alternate;
+}
+
+.nav-link:hover {
+  color: #ff0000;
+  text-shadow: 0 0 15px #ff0000, 0 0 30px darkred, 0 0 45px #ff5555;
+}
+
+@keyframes neonBlink {
+  0% {
+    text-shadow: 0 0 5px white, 0 0 10px #ff0000;
+    opacity: 0.8;
+  }
+  50% {
+    text-shadow: 0 0 15px #ff0000, 0 0 30px darkred, 0 0 45px #ff5555;
+    opacity: 1;
+  }
+  100% {
+    text-shadow: 0 0 5px white, 0 0 10px #ff0000;
+    opacity: 0.8;
+  }
+}
