@@ -15,8 +15,8 @@ function ContactUs() {
     e.preventDefault();
     setStatus("Sending...");
 
-    const TELEGRAM_TOKEN = "8518254149:AAFAMSnS2aUWh5ktDFQOKY9SJu3x_gceykw";
-    const CHAT_ID = "-1003328624666"; 
+    const TELEGRAM_TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+    const CHAT_ID = process.env.REACT_APP_TELEGRAM_CHAT_ID;
 
     const message = `
 📩 New Contact Message

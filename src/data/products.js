@@ -1,68 +1,70 @@
-import product1 from "../assets/product1.jpg";
-import product2 from "../assets/product2.jpg";
-import product3 from "../assets/product3.jpg";
-import product4 from "../assets/product4.jpg";
-import product5 from "../assets/product5.jpg";
-import product6 from "../assets/product6.jpg";
-import product7 from "../assets/product7.jpg";
-import product8 from "../assets/product8.jpg";
+// src/data/products.js
+
+import product1 from "../assets/devilwingscompressinshirt.jpg";
+import product2 from "../assets/dragonbaggyjoggerblue.jpg";
+import product3 from "../assets/dragonbaggyjoggerwhite.jpg";
+import product4 from "../assets/gymsharkbaggypant.jpg";
+import product5 from "../assets/gymsharkred.jpg";
+import product6 from "../assets/spiderbaggyjoggerblue.jpg";
+import product7 from "../assets/spiderbaggyjoggerwhite.jpg";
+import product8 from "../assets/spiderbaggyjoggerred.jpg";
 
 const products = [
   {
     id: 1,
-    name: "Ghost Hoodie",
+    name: "Devil Wings Compression Shirt",
     price: 2000,
     images: [product1],
-    description: "Comfortable black hoodie with street style.",
+    description: "High-performance compression shirt with devil wings design, perfect for workouts.",
   },
   {
     id: 2,
-    name: "Spider T-Shirt",
+    name: "Dragon Baggy Jogger Blue",
     price: 2000,
     images: [product2],
-    description: "Black T-Shirt with spider print.",
+    description: "Comfortable blue baggy joggers with dragon print, ideal for street style and casual wear.",
   },
   {
     id: 3,
-    name: "Skull T-Shirt",
+    name: "Dragon Baggy Jogger White",
     price: 1800,
     images: [product3],
-    description: "Dark streetwear T-Shirt with skull art.",
+    description: "White baggy joggers with dragon design, combining comfort and modern street fashion.",
   },
   {
     id: 4,
-    name: "Samurai Hoodie",
+    name: "Gymshark Baggy Pant",
     price: 2500,
     images: [product4],
-    description: "Black hoodie with samurai red artwork.",
+    description: "Black Gymshark baggy pants for training and casual looks, with breathable material.",
   },
   {
     id: 5,
-    name: "Urban Hoodie",
+    name: "Gymshark Red Hoodie",
     price: 2200,
     images: [product5],
-    description: "Urban style hoodie with unique graphic design.",
+    description: "Red hoodie from Gymshark, perfect for a sporty and urban outfit.",
   },
   {
     id: 6,
-    name: "Blue Flame T-Shirt",
+    name: "Spider Baggy Jogger Blue",
     price: 1700,
     images: [product6],
-    description: "Blue flame printed T-Shirt with street vibes.",
+    description: "Blue baggy joggers with spider print, ideal for casual streetwear.",
   },
   {
     id: 7,
-    name: "Shadow Hoodie",
+    name: "Spider Baggy Jogger White",
     price: 2400,
     images: [product7],
-    description: "Minimalist hoodie with shadow logo.",
+    description: "White baggy joggers featuring a spider design, stylish and comfortable for everyday wear.",
   },
   {
     id: 8,
-    name: "Wolf T-Shirt",
+    name: "Spider Baggy Jogger Red",
     price: 1900,
     images: [product8],
-    description: "Black shirt with wolf illustration.",
+    description: "Red baggy joggers with spider motif, combining comfort and street fashion.",
   },
 ];
 

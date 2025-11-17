@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
-import products from "../data/products"; 
+import products from "../data/products";
 
 function ProductPage({ cartItems, setCartItems }) {
   const { id } = useParams();
@@ -10,29 +10,30 @@ function ProductPage({ cartItems, setCartItems }) {
   const defaultColors = [
     { name: "Black", code: "#000000" },
     { name: "Red", code: "#ff0000" },
-    { name: "Gray", code: "#444444" }
+    { name: "Gray", code: "#444444" },
   ];
 
   let colors = [];
   if (product?.colors?.length > 0) {
-    colors = product.colors.map(c =>
+    colors = product.colors.map((c) =>
       typeof c === "string" ? { name: c, code: c } : c
     );
   } else {
     colors = defaultColors;
   }
 
-  if (!colors.some(c => c.code.toLowerCase() === "#ffffff")) {
+  if (!colors.some((c) => c.code.toLowerCase() === "#ffffff")) {
     colors.push({ name: "White", code: "#ffffff" });
   }
 
   const sizes = product?.sizes || ["S", "M", "L", "XL"];
-
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
 
   if (!product) {
-    return <p style={{ color: "#fff", textAlign: "center" }}>Product not found</p>;
+    return (
+      <p style={{ color: "#fff", textAlign: "center" }}>Product not found</p>
+    );
   }
 
   const handleAddToCart = () => {
@@ -47,26 +48,34 @@ function ProductPage({ cartItems, setCartItems }) {
   const recommended = products
     .filter((p) => p.id !== product.id)
     .sort(() => 0.5 - Math.random())
-    .slice(0, 6); 
+    .slice(0, 6);
+
+  const productImage =
+    product.images[selectedColor.name] ||
+    product.images[Object.keys(product.images)[0]];
 
   return (
     <div style={{ color: "#fff", padding: "20px" }}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "40px" }}>
-
-        {}
         <div style={{ flex: "1 1 300px", textAlign: "center" }}>
           <h1 style={{ marginBottom: "20px" }}>{product.name}</h1>
-
           <img
-            src={product.images[0]}
+            src={productImage}
             alt={product.name}
-            style={{ width: "600px", height: "auto", borderRadius: "12px", marginBottom: "20px" }}
+            style={{
+              width: "600px",
+              height: "auto",
+              borderRadius: "12px",
+              marginBottom: "20px",
+            }}
           />
+          <p style={{ fontSize: "20px", marginBottom: "10px" }}>
+            {product.price} DZD
+          </p>
+          <p style={{ color: "#ccc", marginBottom: "20px" }}>
+            {product.description}
+          </p>
 
-          <p style={{ fontSize: "20px", marginBottom: "10px" }}>{product.price} DZD</p>
-          <p style={{ color: "#ccc", marginBottom: "20px" }}>{product.description}</p>
-
-          {}
           <div style={{ marginBottom: "10px" }}>
             <span style={{ marginRight: "10px" }}>Color:</span>
             {colors.map((colorObj) => (
@@ -75,7 +84,10 @@ function ProductPage({ cartItems, setCartItems }) {
                 onClick={() => setSelectedColor(colorObj)}
                 style={{
                   backgroundColor: colorObj.code,
-                  border: selectedColor.code === colorObj.code ? "3px solid red" : "2px solid #fff",
+                  border:
+                    selectedColor.code === colorObj.code
+                      ? "3px solid red"
+                      : "2px solid #fff",
                   marginRight: "5px",
                   width: "30px",
                   height: "30px",
@@ -87,7 +99,6 @@ function ProductPage({ cartItems, setCartItems }) {
             ))}
           </div>
 
-          {}
           <div style={{ marginBottom: "20px" }}>
             <span style={{ marginRight: "10px" }}>Size:</span>
             {sizes.map((size) => (
@@ -129,7 +140,6 @@ function ProductPage({ cartItems, setCartItems }) {
           </button>
         </div>
 
-        {}
         <div style={{ flex: "1 1 300px" }}>
           <h2 style={{ marginBottom: "20px" }}>Recommended Products</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
@@ -137,10 +147,7 @@ function ProductPage({ cartItems, setCartItems }) {
               <div key={rp.id} style={{ display: "flex", justifyContent: "flex-start" }}>
                 <Link
                   to={`/product/${rp.id}`}
-                  style={{
-                    textDecoration: "none",
-                    display: "inline-block", 
-                  }}
+                  style={{ textDecoration: "none", display: "inline-block" }}
                 >
                   <ProductCard {...rp} showAddToCart={false} />
                 </Link>
@@ -148,7 +155,6 @@ function ProductPage({ cartItems, setCartItems }) {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

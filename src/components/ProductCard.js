@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function ProductCard({ id, images, name, price, cartItems, setCartItems, showAddToCart = true }) {
+function ProductCard({
+  id,
+  images,
+  name,
+  price,
+  cartItems,
+  setCartItems,
+  showAddToCart = true,
+}) {
   const handleAddToCart = () => {
     if (!Array.isArray(cartItems)) {
       setCartItems([{ id, images, name, price }]);
@@ -26,13 +34,16 @@ function ProductCard({ id, images, name, price, cartItems, setCartItems, showAdd
         <img
           src={images[0]}
           alt={name}
-          style={{ width: "200px", height: "200px", objectFit: "contain", borderRadius: "8px" }}
+          style={{
+            width: "200px",
+            height: "200px",
+            objectFit: "contain",
+            borderRadius: "8px",
+          }}
         />
       </Link>
-
       <h3>{name}</h3>
       <p>{price} DZD</p>
-
       {showAddToCart && (
         <button
           onClick={handleAddToCart}
