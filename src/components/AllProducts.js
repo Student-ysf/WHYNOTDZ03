@@ -19,7 +19,7 @@ function AllProducts({ cartItems, setCartItems }) {
           {...product}
           cartItems={cartItems}
           setCartItems={setCartItems}
-          showAddToCart={true} // زر الشراء يظهر
+          showAddToCart={false} 
         />
       ))}
     </section>

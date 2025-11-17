@@ -1,5 +1,3 @@
-// src/data/products.js
-
 import product1 from "../assets/devilwingscompressinshirt.jpg";
 import product2 from "../assets/dragonbaggyjoggerblue.jpg";
 import product3 from "../assets/dragonbaggyjoggerwhite.jpg";

@@ -10,7 +10,7 @@ function ProductPage({ cartItems, setCartItems }) {
   const defaultColors = [
     { name: "Black", code: "#000000" },
     { name: "Red", code: "#ff0000" },
-    { name: "Gray", code: "#444444" },
+    { name: "Blue", code: "#0000FF" },
   ];
 
   let colors = [];
