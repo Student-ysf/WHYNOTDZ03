@@ -7,6 +7,9 @@ import product9 from "../assets/gymsharkwhite.jpg";
 import product6 from "../assets/spiderbaggyjoggerblue.jpg";
 import product7 from "../assets/spiderbaggyjoggerwhite.jpg";
 import product8 from "../assets/spiderbaggyjoggerred.jpg";
+import product8 from "../assets/Batmancompressionshirtwhite.jpg";
+
+
 const products = [
   {
     id: 1,
@@ -71,6 +74,14 @@ const products = [
     images: [product9],
     description: "White Gym Shark T-shirt designed for comfort and performance, featuring a clean athletic look and a premium soft fabric perfect for training or casual wear .",
   },
+  {
+    id: 10,
+    name: "Batmancompressionshirtwhite",
+    price: 1900,
+    images: [product10],
+    description: "White compression shirt engineered for maximum support and flexibility, featuring breathable stretch fabric that enhances performance during workouts while keeping you cool and comfortable.",
+  },
+
 
 ];
 
