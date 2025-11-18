@@ -7,7 +7,7 @@ import product9 from "../assets/gymsharkwhite.jpg";
 import product6 from "../assets/spiderbaggyjoggerblue.jpg";
 import product7 from "../assets/spiderbaggyjoggerwhite.jpg";
 import product8 from "../assets/spiderbaggyjoggerred.jpg";
-import product8 from "../assets/Batmancompressionshirtwhite.jpg";
+import product10 from "../assets/Batmancompressionshirtwhite.jpg";
 
 
 const products = [
